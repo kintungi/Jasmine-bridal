@@ -1,0 +1,194 @@
+@font-face {
+    font-family: messina;
+    src: url(../Assets/fonts/MessinaSans-Regular.woff) format("woff");
+    font-style: normal; 
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: messina;
+    src: url(../Assets/fonts/MessinaSans-RegularItalic.woff) format("woff");
+    font-style: italic;
+    font-weight: 400; 
+}
+
+@font-face {
+    font-family: messina;
+    src: url(../Assets/fonts/MessinaSans-SemiBold.woff) format("woff");
+    font-style: normal;
+    font-weight: 600; 
+}
+
+@font-face {
+    font-family: messina;
+    src: url(../Assets/fonts/MessinaSans-SemiBoldItalic.woff) format("woff");
+    font-style: italic;
+    font-weight: 600; 
+}
+
+@font-face {
+    font-family: walkingrush;
+    src: url(../Assets/fonts/Walkingrush.woff) format("woff");
+    font-style: normal;
+    font-weight: 400; 
+}
+
+@font-face {
+    font-family: messina;
+    src: url(../Assets/fonts/MessinaSans-Bold.woff) format("woff");
+    font-style: normal;
+    font-weight: 700; 
+}
+
+@font-face {
+    font-family: messina;
+    src: url(../Assets/fonts/MessinaSans-BoldItalic.woff) format("woff");
+    font-style: italic;
+    font-weight: 700; 
+}
+
+@font-face {
+    font-family: messina;
+    src: url(../Assets/fonts/MessinaSans-Black.woff) format("woff");
+    font-style: normal;
+    font-weight: 900; 
+}
+
+@font-face {
+    font-family: messina;
+    src: url(../Assets/fonts/MessinaSans-BlackItalic.woff) format("woff");
+    font-style: italic;
+    font-weight: 900; 
+}
+
+@font-face {
+    font-family: messina;
+    src: url(../Assets/fonts/MessinaSans-Light.woff) format("woff");
+    font-style: normal;
+    font-weight: 300; 
+}
+
+@font-face {
+    font-family: messina;
+    src: url(../Assets/fonts/MessinaSans-LightItalic.woff) format("woff");
+    font-style: italic;
+    font-weight: 300; 
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+    font-family: 'Walkingrush';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 96px;
+}
+
+h2 {
+    font-family: 'Walkingrush';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 56px;
+}
+
+h3 {
+    font-family: 'messina';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+}
+
+h4 {
+    font-family: 'messina';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+h5 {
+    font-family: 'messina';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+h6 {
+    font-family: 'messina';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.subtitle {
+    font-family: 'messina';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.text-body {
+    font-family: 'messina';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.body-bold {
+    font-family: 'messina';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.text-small {
+    font-family: 'messina';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.text-smaller {
+    font-family: 'messina';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.link-styles {
+    text-decoration: none;
+    margin-right: 64px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
+    width: 100vw;
+    height: 96px;
+}
+
+body {
+    background-color: woody;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    margin: 0;
+}
+

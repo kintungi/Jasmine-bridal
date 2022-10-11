@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tailwind": "npx tailwindcss -i ./tailwind/index.css -o ./styles/globals.css --JIT --watch",
+    "sass": "sass --watch ./sass:./styles"
   },
   "dependencies": {
     "next": "12.3.1",
@@ -15,6 +17,7 @@
   },
   "devDependencies": {
     "eslint": "8.25.0",
-    "eslint-config-next": "12.3.1"
+    "eslint-config-next": "12.3.1",
+    "tailwindcss": "^3.1.8"
   }
 }
