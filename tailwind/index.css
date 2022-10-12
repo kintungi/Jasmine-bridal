@@ -136,7 +136,7 @@ h6 {
     line-height: 36px;
 }
 
-.text-body {
+.text-body, p {
     font-family: 'messina';
     font-style: normal;
     font-weight: 400;
@@ -184,11 +184,21 @@ h6 {
     height: 96px;
 }
 
-body {
-    background-color: woody;
+/* body {
     display: grid;
     place-items: center;
     width: 100%;
     margin: 0;
+} */
+
+.nav-link {
+    @apply no-underline mr-64 uppercase font-semibold
+}
+
+.feature-card {
+    @apply max-w-[320px] p-48 bg-uiLight mb-48
+}
+.footer {
+    background-color: black;
 }
 

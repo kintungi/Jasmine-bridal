@@ -3,11 +3,11 @@ import NavBar from '../components/NavBar'
 
 function portfolio() {
   return (
-    <>
+    <div className='mt-96'>
      <h1>
-      Work
+      Portfolio
      </h1>
-    </>
+    </div>
     
   )
 }

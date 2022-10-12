@@ -40,21 +40,20 @@ function NavBar({textDecoration, color}) {
   
 
   return (
-    
-      <nav className="nav">
-       <div style={{...sideStyles}} className="right-nav">
-       <Link href="/"><a className='link-styles'>Home</a></Link>
-        <Link  href="/about"><a className='link-styles'>About{chevron}</a></Link>
-        <Link href="/services"><a className='link-styles'>Services</a></Link>
+      <nav className="z-[1000] fixed top-0 bg-white w-full flex flex-row justify-between items-center text-body h-[96px] px-72 text-defaultText">
+       <div className="left-nav flex flex-row">
+       <Link href="/"><a className='nav-link'>Home</a></Link>
+        <Link  href="/about"><a className='nav-link flex flex-row items-center'><span>About</span>{chevron}</a></Link>
+        <Link href="/services"><a className='nav-link'>Services</a></Link>
        </div>
        {logo}
-        <div style={{...sideStyles}} className="right-nav">
-        <Link href="/portfolio"><a className='link-styles'>Portfolio</a></Link>
-        <Link href="/newsAndUpdates"><a className='link-styles'>News & updates</a></Link>
-        <Link href="/contact"><a className='link-styles'>Contact</a></Link>
+        <div className="right-nav">
+        <Link href="/portfolio"><a className='nav-link'>Portfolio</a></Link>
+        <Link href="/newsAndUpdates"><a className='nav-link'>News & updates</a></Link>
+        <Link href="/contact"><a className='no-underline mr-0 uppercase font-semibold'>Contact</a></Link>
         </div>
       </nav>
-  )
+  ) 
 }
 
 export default NavBar
