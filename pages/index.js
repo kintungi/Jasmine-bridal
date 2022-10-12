@@ -6,6 +6,10 @@ import circularOne from "../assets/images/circular-one.png"
 import circularTwo from "../assets/images/circular-two.png"
 import CardHolding from "../assets/images/card-holding.png"
 import BlockCard from '../components/blockCard'
+import CardNews from '../components/CardNews'
+import newsOne from "../assets/images/news-one.png"
+import newsTwo from "../assets/images/news-two.png"
+import newsThree from "../assets/images/news-three.png"
 // import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -191,28 +195,36 @@ export default function Home() {
       </section>
 
       <section className='mx-auto flex flex-col items-center'>
-      <div className="image-grid grid grid-flow-col gap-24 ">
-        <div className="one grid grid-flow-row gap-24 grid-cols-[max-width: 400px]">
-          <div className='top bg-[url("../assets/images/grid-one.png")] w-[400px] h-[560px] bg-center bg-cover'></div>
-          <div className='top bg-[url("../assets/images/grid-one.png")] w-[400px] h-[560px] bg-center bg-cover'></div>
+      <h2 className='mb-64'>Explore recent work</h2>
+
+      <div className="image-grid grid grid-flow-col gap-24">
+        <div className="one grid max-h-[1144px] grid-flow-row gap-24 grid-cols-[minmax(50px,_400px)]">
+          <div className='top bg-[url("../assets/images/grid-one.png")] w-[100%] h-[100%] bg-center bg-cover'></div>
+          <div className='top bg-[url("../assets/images/grid-one.png")] w-[100%] h-[100%] bg-center bg-cover'></div>
         </div>
         
-        <div className="two grid grid-flow-row gap-24 max-h-[1144] grid-rows-[1fr_560px_1fr]">
-          <div className='top bg-[url("../assets/images/grid-two.png")] w-[400px] h-[536] bg-center bg-cover'></div>
-          <div className='top bg-[url("../assets/images/grid-two.png")] w-[400px] h-[560px] bg-center bg-cover'></div>
-          <div className='top bg-[url("../assets/images/grid-two.png")] w-[400px] h-[536] bg-center bg-cover'></div>
+        <div className="two grid grid-flow-row gap-24 max-h-[1144px] grid-rows-[1fr_560px_1fr] grid-cols-[minmax(50px,_400px)]">
+          <div className='top bg-[url("../assets/images/grid-two.png")] w-[100%]  bg-center bg-cover'></div>
+          <div className='top bg-[url("../assets/images/grid-two.png")] w-[100%]  bg-center bg-cover'></div>
+          <div className='top bg-[url("../assets/images/grid-two.png")] w-[100%]  bg-center bg-cover'></div>
         </div>
 
-        <div className="three grid grid-flow-row gap-24">
-          <div className='top bg-[url("../assets/images/grid-three.png")] w-[400px] h-[560px] bg-center bg-cover'></div>
-          <div className='top bg-[url("../assets/images/grid-three.png")] w-[400px] h-[560px] bg-center bg-cover'></div>
+        <div className="three grid grid-flow-row max-h-[1144px] grid-rows-[1fr_1fr] gap-24 grid-cols-[minmax(50px,_400px)]">
+          <div className='top bg-[url("../assets/images/grid-three.png")] w-[100%] h-[100%] bg-center bg-cover'></div>
+          <div className='top bg-[url("../assets/images/grid-three.png")] w-[100%] h-[560px] bg-center bg-cover'></div>
         </div>
       </div>
+
       <button className='uppercase font-medium text-woody py-12 px-36 border-2 rounded-full border-woody mt-72'>see porfolio</button>
       </section>
 
       <section className="stories flex flex-col items-center">
         <h2 className='mb-64'>Latest news and stories</h2>
+        <section className="posts grid grid-flow-col grid-cols-[max-content_max-content_max-content] gap-48">
+          <CardNews src={newsOne} alt="Image of a bride" heading=" 5 Favourite Alternative Unity Ceremony Ideas"/>
+          <CardNews src={newsTwo} alt="Image of a bride" heading=" Writing Your Own Wedding Vows: Everything You Need to Think About"/>
+          <CardNews src={newsThree} alt="Image of a bride" heading=" Renewing Your Wedding Vows: A Definitive Guide"/>
+        </section>
       </section>
 
     </main>
