@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from "next/link"
 import { noenforceall } from 'jshint/src/options'
 
@@ -38,20 +38,43 @@ function NavBar({textDecoration, color}) {
   <path d="M25.6571 17.0383H20.4033V13.019H15.2326V13.0467C16.1727 13.3516 16.8455 13.8691 17.1774 14.5713C17.4539 15.1072 17.629 15.9295 17.6935 17.0383H14.3753V13.019H9.20458V13.0467C10.1447 13.3516 10.8176 13.8691 11.1494 14.5713C11.4259 15.1072 11.601 15.9295 11.6655 17.0383H6.43945V18.9878H11.6932V32.5424C11.6932 35.6839 11.0849 37.7905 9.35205 39.8325L9.93274 40.3776C12.8822 37.846 14.3753 34.9817 14.3753 31.7478V18.9786H17.7212V32.5332C17.7212 35.6747 17.1128 37.7813 15.38 39.8233L15.9607 40.3684C18.9102 37.8367 20.4033 34.9724 20.4033 31.7386V18.9786H25.6571V17.0383Z" fill="#8C6339"/>
   </svg>
   
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = (e) => {
+  
+    const submenu = document.getElementById("submenu");
+     
+    isVisible ? setIsVisible(false) : setIsVisible(true);
+
+    if(isVisible) {
+      submenu.style.visibility = "hidden"
+    } else {
+      submenu.style.visibility = "visible"
+    }
+    
+  }
 
   return (
-      <nav className="z-[1000] fixed top-0 bg-white w-full flex flex-row justify-between items-center text-body h-[96px] px-72 text-defaultText">
-       <div className="left-nav flex flex-row">
-       <Link href="/"><a className='nav-link'>Home</a></Link>
-        <Link  href="/about"><a className='nav-link flex flex-row items-center'><span>About</span>{chevron}</a></Link>
-        <Link href="/services"><a className='nav-link'>Services</a></Link>
-       </div>
-       {logo}
-        <div className="right-nav">
-        <Link href="/portfolio"><a className='nav-link'>Portfolio</a></Link>
-        <Link href="/newsAndUpdates"><a className='nav-link'>News & updates</a></Link>
-        <Link href="/contact"><a className='no-underline mr-0 uppercase font-semibold'>Contact</a></Link>
-        </div>
+      <nav className="z-[1000] fixed top-0 bg-white w-full flex flex-row justify-between items-center text-body h-[96px] px-72 text-defaultText shadow-md">
+       <ul className="h-[100%] items-center left-nav flex flex-row">
+        <li><Link href="/"><a className='nav-link'>Home</a></Link></li>
+        <li className='flex flex-row items-center dropdown'>
+        <Link   href="#"><a onMouseLeave={f => f} onMouseOver={f => f} className='top-menu relative nav-link flex flex-row items-center'><span>About</span>{chevron}</a></Link>
+        <ul  id="submenu" className="submenu bg-woody absolute top-[96px] left-[144px] text-white flex flex-col px-32 py-16">
+          <li className='nav-link mb-8'><Link href="/about-us"><a >About us</a></Link></li>
+          <li><Link href="/about-team"><a className='nav-link'>Team</a></Link></li>
+        </ul>
+        </li>
+        <li><Link href="/services"><a className='nav-link'>Services</a></Link></li>
+       </ul>
+       <div className='logo justify-self-center'>{logo}</div>
+        <ul className="right-nav flex flex-row">
+          <li><Link href="/portfolio"><a className='nav-link'>Portfolio</a></Link></li>
+          <li><Link href="/news-and-updates"><a className='nav-link'>News & updates</a></Link></li>
+          <li><Link href="/contact"><a className='no-underline mr-0 uppercase font-semibold'>Contact</a></Link></li>
+        </ul>
+
+        
       </nav>
   ) 
 }

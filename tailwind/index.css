@@ -84,8 +84,9 @@ h1 {
     font-family: 'Walkingrush';
     font-style: normal;
     font-weight: 400;
-    font-size: 72px;
-    line-height: 96px;
+    font-size: clamp(36px, 10vw, 72px);
+    line-height: 113.3%;
+    /* line-height: 96px; */
 }
 
 h2 {
@@ -93,7 +94,8 @@ h2 {
     font-style: normal;
     font-weight: 400;
     font-size: 48px;
-    line-height: 56px;
+    line-height: 116.7%;
+    /* line-height: 56px; */
 }
 
 h3 {
@@ -142,6 +144,10 @@ h6 {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+}
+
+p:has(+ p) {
+    margin-bottom: 24px;
 }
 
 .body-bold {
@@ -200,5 +206,104 @@ h6 {
 }
 .footer {
     background-color: black;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    /* display: none; */
+
+}
+
+.submenu {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.dropdown {
+    height: 100%;
+    cursor: pointer;
+}
+.dropdown:hover > ul {
+    visibility: visible;
+}
+
+ul.submenu:hover {
+    visibility: visible;
+} 
+
+.team-grid {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-rows: max-content;
+    gap: 124px 20px;
+    justify-content: center;
+}
+/* .team-grid {
+    display: flex;
+    flex-flow: row wrap;
+} */
+
+.team-bio {
+    visibility: hidden;
+}
+
+.projects-grid {
+    display: grid;
+    grid-auto-columns: max-content;
+    grid-auto-rows: max-content;
+    gap: 20px;
+    grid-template-columns: max-content max-content;
+}
+
+img {
+    margin: 0
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: max-content;
+    gap: 192px 20px;
+}
+
+.project-grid-article {
+    grid-area: 1 / 8 / 2 / -3 ;
+    place-self: center;
+}
+.project-grid-one {
+    grid-area: 1 / 2 / 2 / 6 ;
+}
+
+.project-grid-two {
+    grid-area: 2 / 5 / 3 / -1 ;
+}
+
+.project-grid-three {
+    grid-area: 3 / 2 / 4 / 6 ;
+}
+
+.project-grid-four {
+    grid-area: 3 / 7 / 4 / -1 ;
+}
+
+.project-grid-five {
+    grid-area: 4 / 3 / 5 / -3 ;
+}
+
+.project-grid-six {
+    grid-area: 5 / 5 / 6 / 9 ;
+}
+
+.project-grid-seven {
+    grid-area: 6 / 1 / 7 / 7 ;
+}
+
+.project-grid-eight {
+    grid-area: 6 / -6 / 7 / -2 ;
+}
+
+.project-grid-nine {
+    grid-area: 7 / 3 / 8 / -3 ;
 }
 

@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "name": "Jasmine Lida",
+        "title": "CEO, Founder",
+        "bio": "Anna brings a ceaseless love and passion to planning and designing, for any type of event imaginable. She has more than sixteen years of experience in event planning and design and team management. Her scope of work ranges from Weddings to Corporate Events and any type of Social Event one can dream of.*Because each client is unique, she has strived to create a custom team of experienced professionals to best meet our client’s specific planning and design needs. Everyone on the ANNA LUCIA EVENTS team is dedicated to one goal — a successful event or spectacular wedding designed just for you.",
+        "imageUrl": "/team_jasmine.png"
+    },
+    {
+        "id": "2",
+        "name": "Oliva Mateo",
+        "title": "Event associate",
+        "bio": "Olivia joined the ANNA LUCIA EVENTS team in October 2018, after graduating from the University of Florida with a Bachelor’s degree in Tourism, Event, and Recreation Management and a minor in Mass Communication Studies.*Over the past four years she has completed multiple internships in the Event Industry. Before moving to Tampa to work for Anna Lucia Events full time, Jessica spent the summer completing her final semester of field experience hours with Easton Events in Charleston, SC.*Her love for all things design and style, attention to detail, and organizational skills make her a valuable asset to our team!",
+        "imageUrl": "/team_oliva.png"
+    },
+    {
+        "id": "3",
+        "name": "Suzan Rokenhall",
+        "title": "Senior event producer",
+        "bio": "Suzan is passionate about helping people. She is a connector who loves to bring people together. That’s why event planning is right up her alley. She has an extensive background in the catering industry, working in such a high-stress environment helped her master the skills of multitasking, time management, and efficiency of customer service as a top priority. When Suzanne is not planning, visualizing, creating or dreaming up events, she is spending any free time she does have with the love of her life and their rescue pup Ace. A few of her favorite things are sloths, cotton candy, and the Michigan State Spartans!",
+        "imageUrl": "/team_suzan.png"
+    },
+    {
+        "id": "4",
+        "name": "Iren Miller",
+        "title": "Executive assistant / office manager",
+        "bio": "Iren joined ANNA LUCIA EVENTS in July 2021 as Anna’s Executive Assistant and Office Manager. A native of Tampa, Lynn recently moved back to Tampa after living in NYC for over 20 years. She brings a wealth of experience in the art and design worlds.",
+        "imageUrl": "/team_iren.png"
+    },
+    {
+        "id": "5",
+        "name": "Melania Cabasso",
+        "title": "Senior event producer",
+        "bio": "Melanie joined the ANNA LUCIA EVENTS team in 2021 after working her way through the corporate world for nearly 10 years as the Director of Experiences for IMG Academy, an ENDEAVOR Company. Her adventures not only provided her an opportunity to start many foundational projects to see through the growth of student and alumni engagement but more recently focused on building out the opportunity for corporate business around the world. Whether it was curating new experiences for community engagement, managing hospitality functions for The PGA Masters Tournament, Super Bowl Events with WME|IMG, leading the WNBA 2020 Season Experience at IMG Academy, building bespoke corporate experiences was her soft spot. Melanie is no stranger to corporate hospitality, VIP management, and weddings!",
+        "imageUrl": "/team_melania.png"
+    } 
+]

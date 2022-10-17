@@ -1,13 +1,10 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
+import Pages from '../components/Pages'
 
 function NotFound() {
   return (
-    <div className='mt-96'>
-    <div>
-      404 Page not found
-    </div>
-    </div>
+    <Pages title="404 Page not found"></Pages>
   )
 }
 

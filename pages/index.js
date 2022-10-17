@@ -10,6 +10,9 @@ import CardNews from '../components/CardNews'
 import newsOne from "../assets/images/news-one.png"
 import newsTwo from "../assets/images/news-two.png"
 import newsThree from "../assets/images/news-three.png"
+import Form from '../components/Form'
+import LinkText from '../components/LinkText'
+import LinkTextWhite from '../components/LinkTextWhite'
 // import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -170,7 +173,7 @@ export default function Home() {
         <h3 className='mb-16'>Exquisite and top notch wedding services</h3>
         <p className='mb-24'>We offer all services pertaining to wedding, which means our client will not have to bother to do anything or hire other third party companies to offer help. Our services are also cheap and affordable offered at different tiers basing on the budget of our clients.</p>
       </div>
-      <button className='underline uppercase'><span>See services</span><div className='line'></div></button>
+      <LinkTextWhite text="See services" />
       </article>
     </div>
     </div>
@@ -185,7 +188,7 @@ export default function Home() {
         <h3 className='mb-16'>Experienced team of organisers</h3>
         <p className='mb-24'>Our team of organisers has more than 10 years of industry experience in wedding planning with over 50 ceremonies during the time. Our team is ready to listen to your idea and make it a reality.</p>
       </div>
-      <button className='underline uppercase'><span>See services</span><div className='line'></div></button>
+      <LinkTextWhite text="See team" />
       </article>
     </div>
     </div>
@@ -195,21 +198,21 @@ export default function Home() {
       </section>
 
       <section className='mx-auto flex flex-col items-center'>
-      <h2 className='mb-64'>Explore recent work</h2>
+      <h2 className='max-w-[590px] text-center mb-64'>Explore recent work</h2>
 
-      <div className="image-grid grid grid-flow-col gap-24">
-        <div className="one grid max-h-[1144px] grid-flow-row gap-24 grid-cols-[minmax(50px,_400px)]">
+      <div className="image-grid grid grid-flow-col gap-24 mx-72">
+        <div className="one grid max-h-[1144px] grid-flow-row gap-24 grid-cols-[minmax(50px,400px)]">
           <div className='top bg-[url("../assets/images/grid-one.png")] w-[100%] h-[100%] bg-center bg-cover'></div>
           <div className='top bg-[url("../assets/images/grid-one.png")] w-[100%] h-[100%] bg-center bg-cover'></div>
         </div>
         
-        <div className="two grid grid-flow-row gap-24 max-h-[1144px] grid-rows-[1fr_560px_1fr] grid-cols-[minmax(50px,_400px)]">
+        <div className="two grid grid-flow-row gap-24 max-h-[1144px] grid-rows-[1fr_560px_1fr] grid-cols-[minmax(50px,400px)]">
           <div className='top bg-[url("../assets/images/grid-two.png")] w-[100%]  bg-center bg-cover'></div>
           <div className='top bg-[url("../assets/images/grid-two.png")] w-[100%]  bg-center bg-cover'></div>
           <div className='top bg-[url("../assets/images/grid-two.png")] w-[100%]  bg-center bg-cover'></div>
         </div>
 
-        <div className="three grid grid-flow-row max-h-[1144px] grid-rows-[1fr_1fr] gap-24 grid-cols-[minmax(50px,_400px)]">
+        <div className="three grid grid-flow-row max-h-[1144px] grid-rows-[1fr_1fr] gap-24 grid-cols-[minmax(50px,400px)]">
           <div className='top bg-[url("../assets/images/grid-three.png")] w-[100%] h-[100%] bg-center bg-cover'></div>
           <div className='top bg-[url("../assets/images/grid-three.png")] w-[100%] h-[560px] bg-center bg-cover'></div>
         </div>
@@ -219,12 +222,20 @@ export default function Home() {
       </section>
 
       <section className="stories flex flex-col items-center">
-        <h2 className='mb-64'>Latest news and stories</h2>
-        <section className="posts grid grid-flow-col grid-cols-[max-content_max-content_max-content] gap-48">
+        <h2 className='max-w-[590px] text-center mb-64'>Latest news and stories</h2>
+        <div>
+        <section className="posts grid grid-flow-col grid-cols-[max-content_max-content_max-content] gap-[48px_24px] mb-64">
           <CardNews src={newsOne} alt="Image of a bride" heading=" 5 Favourite Alternative Unity Ceremony Ideas"/>
           <CardNews src={newsTwo} alt="Image of a bride" heading=" Writing Your Own Wedding Vows: Everything You Need to Think About"/>
           <CardNews src={newsThree} alt="Image of a bride" heading=" Renewing Your Wedding Vows: A Definitive Guide"/>
         </section>
+        <LinkText text="See  All  news and articles" />
+        </div>
+      </section>
+
+      <section className="form flex flex-col items-center">
+        <h2 className='max-w-[590px] text-center mb-64'>Amazing things happen when you say hi</h2>
+        <Form />
       </section>
 
     </main>
