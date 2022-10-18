@@ -1,8 +1,11 @@
 import React from 'react'
 import Portfolio from '../../components/Portfolio'
 import Image from 'next/image'
+import { client, urlFor } from "../../lib/client.js"
 
-function project() {
+function project({projects}) {
+
+  console.log(projects[0].story)
   return (
       <Portfolio title="Stephen & Melissa">
         <div className="portfolio-grid project-grid">
@@ -25,3 +28,17 @@ function project() {
 }
 
 export default project
+
+export async function getServerSideProps() {
+  const query = "*[_type == 'project']";
+
+  const projects = await client.fetch(query)
+
+
+  return {
+    props: {
+      projects
+    }
+  }
+
+}

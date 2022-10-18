@@ -661,6 +661,40 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
 .visible {
   visibility: visible;
 }
@@ -823,6 +857,14 @@ video {
   margin-top: 4.5rem;
 }
 
+.mt-\[20px\] {
+  margin-top: 20px;
+}
+
+.mb-8 {
+  margin-bottom: 0.5rem;
+}
+
 .mt-24 {
   margin-top: 1.5rem;
 }
@@ -839,12 +881,12 @@ video {
   margin-top: 0.5rem;
 }
 
-.mb-8 {
-  margin-bottom: 0.5rem;
-}
-
 .mb-192 {
   margin-bottom: 12rem;
+}
+
+.mt-\[96px\] {
+  margin-top: 96px;
 }
 
 .block {
@@ -1118,6 +1160,10 @@ video {
   border-radius: 999px;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .border-2 {
   border-width: 2px;
 }
@@ -1284,6 +1330,11 @@ video {
   padding-bottom: 16rem;
 }
 
+.py-\[256px\] {
+  padding-top: 256px;
+  padding-bottom: 256px;
+}
+
 .pb-\[256px\] {
   padding-bottom: 256px;
 }
@@ -1294,6 +1345,10 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.font-messina {
+  font-family: messina;
 }
 
 .font-bold {
@@ -1584,6 +1639,52 @@ img {
   grid-area: 7 / 3 / 8 / -3 ;
 }
 
+.news-hero {
+  grid-area: 1 / 2 / 2 / -2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: -webkit-max-content;
+  grid-template-rows: max-content;
+  gap: 20px;
+  justify-items: center;
+}
+
+.news-hero-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: aqua; */
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: -webkit-max-content;
+  grid-template-rows: max-content;
+  gap: 192px 0;
+}
+
+.other-news {
+  display: grid;
+  grid-area: 2 / 3 / 3 / -3;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: -webkit-max-content;
+  grid-template-rows: max-content;
+  gap: 96px 20px;
+}
+
+.other-news + .form {
+  grid-area: 3 / 2 / 4 / -2;
+}
+
+.post-writer-image {
+  -webkit-clip-path: circle();
+          clip-path: circle();
+  width: 64px;
+  height: 64px;
+  /* display: none; */
+}
+
 @media (min-width: 768px) {
   .md\:text-yellow {
     --tw-text-opacity: 1;
@@ -1597,4 +1698,3 @@ img {
     color: rgb(110 69 27 / var(--tw-text-opacity));
   }
 }
-
