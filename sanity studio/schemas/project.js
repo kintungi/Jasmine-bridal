@@ -5,6 +5,7 @@ export default {
     fields: [
       {
         name: "project_name",
+        description: "Bridegroom & bride",
         title: "Project name",
         type: "string"
       },
@@ -21,9 +22,31 @@ export default {
             description: "First name only"
         },
         {
-            name: "story",
-            title: "Story",
+            name: "brief_story",
+            title: "Brief story",
             type: "blockContent"
+        },
+        {
+            name: "project_cover",
+            title: "Project cover",
+            type: "image",
+            description: "width: 514 height: 720",
+            fields: [
+                {
+                  name: 'caption',
+                  type: 'string',
+                  title: 'Caption',
+                  options: {
+                    isHighlighted: true // <-- make this field easily accessible
+                  }
+                },
+                {
+                  // Editing this field will be hidden behind an "Edit"-button
+                  name: 'attribution',
+                  type: 'string',
+                  title: 'Attribution',
+                }
+              ]
         },
         {
             name: "image_one",
@@ -95,7 +118,7 @@ export default {
             name: "image_four",
             title: "Image 4",
             type: "image",
-            description: "width: 781.57 height: 720",
+            description: "width: 782 height: 720",
             fields: [
                 {
                   name: 'caption',
