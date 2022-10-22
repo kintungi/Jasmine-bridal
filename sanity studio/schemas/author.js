@@ -21,9 +21,16 @@ export default {
       name: 'image',
       title: 'Image',
       type: 'image',
+      description: "64 x 64",
       options: {
         hotspot: true,
       },
+    },
+    {
+      name: "title",
+      title: "Title",
+      type: "string",
+      description: "eg Designer at Amazon"
     },
     {
       name: 'bio',

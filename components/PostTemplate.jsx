@@ -1,36 +1,37 @@
 import React from 'react'
 import Image from 'next/image'
 import CardNewsMedium from './CardNewsMedium'
+import { urlFor } from '../lib/client'
+import BlockContent from "@sanity/block-content-to-react"
 
-function PostTemplate({children}) {
+function PostTemplate({children, title, author_image, author_name, createdAt, mainImage, body, author_title, publishedYear, publishedDate, publishedMonth}) {
   return (
-    <div className='mt-[96px] py-[256px] text-defaultText'>
-      <section className="intro">
-        <h3> 5 Favourite Alternative Unity Ceremony Ideas</h3>
-        <div className="writer">
-            <div><Image src={"/image.png"} width={100} height={100}/></div>
-            <div><p className='body-bold'>Jon Lavender</p> <p>Writer at Rollingstone</p></div>
+    <div className='post-wrapper mt-[96px] py-[256px] text-defaultText'>
+      <section className="post-intro flex flex-col items-center">
+        <h3 className='mb-32 max-w-[514px] text-center'>{title}</h3>
+        <div className="writer flex flex-row">
+        <div className='post-writer-image mr-8'><Image src={urlFor(author_image)} width={100} height={100} alt={""} /></div>
+            <div className='flex flex-col'>
+            <p className='body-bold mb-0' >{author_name}</p> 
+            <p>{author_title}</p>
+            </div>
         </div>
-        <p className="date">August 18, 2022</p>
+        <p className="date mt-32 mb-64 text-subtleText font-bold"><span>{publishedMonth}</span> <span>{publishedDate},</span> <span>{publishedYear}</span></p>
       </section>
-      <div className="body">
-      <div className='post-writer-image'><Image src={"/team_iren.png"} width={100} height={100} /></div>
-      <div className="content">
-        <p>Civil weddings, and purely spiritual non-religious weddings, offer more creative options for a symbolic marriage ceremony, so you can really think outside the box when it comes to planning your alternative unity ceremony.</p>
-        <p>You have lots of choices, such as hiring a wedding celebrant to personalise your wedding service, and you could explore a totally different type of unity ceremony. We’ve rounded up 15 unique ways to make your wedding ceremony different, and asked wedding celebrant Ali Fleming of Cariad Personal Ceremonies to explain what they mean.
-</p>
-        <h5>Our 5 Favourite Alternative Unity Ceremony Ideas</h5>
-        <h6>1. Sand Ceremony</h6>
-        <p>A growing favourite wedding trend, the sand ceremony is a wonderful ceremony alternative. Its meaning is simple and beautiful: two becoming one. The couple mix two different colours of sand into one container, thereby symbolising their lives and hearts entwined. Once combined, it would be extremely difficult to separate the sand out again, just as the couple are so joined together.</p>
-        <p>A growing favourite wedding trend, the sand ceremony is a wonderful ceremony alternative. Its meaning is simple and beautiful: two becoming one. The couple mix two different colours of sand into one container, thereby symbolising their lives and hearts entwined. Once combined, it would be extremely difficult to separate the sand out again, just as the couple are so joined together.</p>
-        <p>A growing favourite wedding trend, the sand ceremony is a wonderful ceremony alternative. Its meaning is simple and beautiful: two becoming one. The couple mix two different colours of sand into one container, thereby symbolising their lives and hearts entwined. Once combined, it would be extremely difficult to separate the sand out again, just as the couple are so joined together.</p>
-        <p>A growing favourite wedding trend, the sand ceremony is a wonderful ceremony alternative. Its meaning is simple and beautiful: two becoming one. The couple mix two different colours of sand into one container, thereby symbolising their lives and hearts entwined. Once combined, it would be extremely difficult to separate the sand out again, just as the couple are so joined together.</p>
-        <p>A growing favourite wedding trend, the sand ceremony is a wonderful ceremony alternative. Its meaning is simple and beautiful: two becoming one. The couple mix two different colours of sand into one container, thereby symbolising their lives and hearts entwined. Once combined, it would be extremely difficult to separate the sand out again, just as the couple are so joined together.</p>
+      <div className="post-hero"><Image src={urlFor(mainImage)} height={740} width={1316} alt={""} /></div>
+      
+      <div className="post-body  mx-auto max-w-[512px] mb-192 mt-64">
+      
+      <BlockContent blocks={body} dataset="production" projectId="cbqnmhpv"/>
+      
       </div>
-      </div>
-      <div className="related-posts">
+
+      <div className="post-related-posts">
+        <h4 className='mb-64'>Related posts</h4>
+        <div className='post-related-posts-cards'>
         <div><CardNewsMedium /></div>
         <div><CardNewsMedium /></div>
+        </div>
       </div>
     </div>
   )

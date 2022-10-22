@@ -3,8 +3,7 @@ import Portfolio from '../../components/Portfolio'
 import Image from 'next/image'
 import { client, urlFor } from "../../lib/client.js"
 import BlockContent from "@sanity/block-content-to-react"
-import {PortableText} from '@portabletext/react'
-import { useNextSanityImage } from 'next-sanity-image';
+
 
 function project({projects, project_id}) {
 
@@ -22,13 +21,10 @@ function project({projects, project_id}) {
 
   // console.log(project)
 
-  const imageProps = useNextSanityImage(
-		client,
-		projects[1].image_two
-	);
+  
+console.log(project[0].image_one)
 
-
-  console.log(urlFor(project[0].image_one).url())
+  console.log(urlFor(project[0].image_one))
 
   
 
@@ -36,15 +32,15 @@ function project({projects, project_id}) {
       <Portfolio title={project[0].project_name}>
         <div className="portfolio-grid project-grid">
             {/* <div className='project-grid-one'><Image src={"https://cdn.sanity.io/images/cbqnmhpv/production/79da24434f93f7bf4697aacde0f1d08882a5e3b3-1028x1440.png"} width={514} height={720}/></div> */}
-            <div className='project-grid-one'><Image src={urlFor(project[0].image_one).url()} width={514} height={720}/></div>
-            <div className='project-grid-two'><Image src={urlFor(project[0].image_two).url()} width={1049} height={720}/></div>
-            <div className='project-grid-three'><Image src={urlFor(project[0].image_three).url()} width={514} height={720}/></div>
-            <div className='project-grid-four'><Image src={urlFor(project[0].image_four).url()} width={782} height={720}/></div>
-            <div className='project-grid-five'><Image src={urlFor(project[0].image_five).url()} width={1049} height={720}/></div>
-            <div className='project-grid-six'><Image src={urlFor(project[0].image_six).url()} width={514} height={720}/></div>
-            <div className='project-grid-seven'><Image src={urlFor(project[0].image_seven).url()} width={782} height={720}/></div>
-            <div className='project-grid-eight'><Image src={urlFor(project[0].image_eight).url()} width={514} height={720}/></div>
-            <div className='project-grid-nine'><Image src={urlFor(project[0].image_nine).url()} width={1049} height={720}/></div>
+            <div className='project-grid-one'><Image src={urlFor(project[0].image_one)} width={514} height={720} alt={""}/></div>
+            <div className='project-grid-two'><Image src={urlFor(project[0].image_two)} width={1049} height={720} alt={""}/></div>
+            <div className='project-grid-three'><Image src={urlFor(project[0].image_three)} width={514} height={720} alt={""}/></div>
+            <div className='project-grid-four'><Image src={urlFor(project[0].image_four)} width={782} height={720} alt={""}/></div>
+            <div className='project-grid-five'><Image src={urlFor(project[0].image_five)} width={1049} height={720} alt={""}/></div>
+            <div className='project-grid-six'><Image src={urlFor(project[0].image_six)} width={514} height={720} alt={""}/></div>
+            <div className='project-grid-seven'><Image src={urlFor(project[0].image_seven)} width={782} height={720} alt={""}/></div>
+            <div className='project-grid-eight'><Image src={urlFor(project[0].image_eight)} width={514} height={720} alt={""}/></div>
+            <div className='project-grid-nine'><Image src={urlFor(project[0].image_nine)} width={1049} height={720} alt={""}/></div>
           
             {/* <div className='project-grid-nine'><Image src="/stephen-melissa-02.png" width={1049} height={720}/></div> */}
             <div className="project-grid-article">
@@ -99,7 +95,7 @@ export async function getStaticPaths() {
   return {
     paths: projects.map((project, i) => {
 
-      const project_id = project._id.toLowerCase().replace(/ /g, "-") //making sure the slug is in the right format
+      const project_id = project._id.toLowerCase().replace(/ /g, "-") //making sure the slug is in the right format by replacing space with a dash
 
       return {
         params: {

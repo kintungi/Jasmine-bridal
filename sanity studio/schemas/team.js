@@ -19,7 +19,7 @@ export default {
             name: "profile_image",
             title: "Image",
             type: "image",
-            description: "width: height:"
+            description: "515 x 720"
         },
         {
             name: "bio",

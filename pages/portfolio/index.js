@@ -22,7 +22,7 @@ function portfolio({projects}) {
         <section className="projects-grid">
           {
               projects && projects.map(project => {
-              return (<Link key={project.project_id} href={"portfolio/" + project._id} ><a ><Image width={515} height="720" src={urlFor(project.project_cover).url()} /></a></Link>)
+              return (<Link key={project.project_id} href={"portfolio/" + project._id} ><a ><Image width={515} height={720} alt={""} src={urlFor(project.project_cover)} /></a></Link>)
             })
           }
         </section>
@@ -39,8 +39,8 @@ export default portfolio
 
 export async function getStaticProps() {
 
-  const query = "*[_type == 'project']"
-  const projects = await client.fetch(query)
+  const query = "*[_type == 'project']" //GROQquery syntax for the request
+  const projects = await client.fetch(query) //Assigning the sanity client to fetch data
 
 
   return {

@@ -3,12 +3,16 @@ import PostTemplate from '../../../components/PostTemplate'
 import { client } from '../../../lib/client'
 
 
-function Post({posts}) {
+function Post({posts, post_slug}) {
 
-  console.log(posts)
+  // console.log(posts)
+
+  const singlePost = posts.filter(post => {
+    return post.slug === post_slug
+  })
   
 
-  const {title, author_name, author_image, body, mainImage, author_title, publishedAt, slug, _id} = posts[1]
+  const {title, author_name, author_image, body, mainImage, author_title, publishedAt, slug, _id} = singlePost[0]
   
   // console.log( typeof new Date())
   // console.log(tite)
@@ -95,8 +99,11 @@ function Post({posts}) {
 
 export default Post
 
-export async function getStaticProps() {
+export async function getStaticProps({params}) {
   // const query_ = "*[_type == 'project']";
+
+
+  const post_slug = params.slug
 
   const query = `*[_type == 'post']{
     _id, 
@@ -115,19 +122,35 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts
+      posts,
+      post_slug
     }
   }
 }
 
-// export async function getStaticPaths() {
+export async function getStaticPaths() {
 
-//   return {
-//     paths: [
-//       {params: {post_id: 1}},
-//       {params: {post_id: 2}},
-//       {params: {post_id: 3}}
-//     ],
-//     fallback: false
-//   }
-// }
+  const query = `*[_type == 'post']{
+    _id, 
+    body, 
+    mainImage,
+    'slug': slug.current,
+    publishedAt, 
+    title,
+    'author_name': author -> name,
+    'author_image': author -> image,
+    'author_title': author -> title
+  }
+  `
+
+  const posts = await client.fetch(query)
+
+  return {
+    paths: posts.map(post => {
+      return {
+        params: {slug: post.slug}
+      }
+    }),
+    fallback: false
+  }
+}
