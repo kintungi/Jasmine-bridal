@@ -1,6 +1,6 @@
 import React from 'react'
-import PostTemplate from '../../../components/PostTemplate'
-import { client } from '../../../lib/client'
+import PostTemplate from '../../components/PostTemplate'
+import { client } from '../../lib/client'
 
 
 function Post({posts, post_slug}) {
@@ -8,9 +8,37 @@ function Post({posts, post_slug}) {
   // console.log(posts)
 
   const singlePost = posts.filter(post => {
+    // return post.slug === "writing-your-own-wedding-vows-everything-you-need-to-think-about"
     return post.slug === post_slug
   })
+
+  const currentIndex = posts.indexOf(singlePost[0])
+  // const currentIndex = 0
+  console.log(posts.indexOf(singlePost[0]), "index of post")
+
+
+  //Figuring out the index numbers for related post section
+  if(currentIndex === 0 && (posts.length > 2)) {
+    var postOneIndex = currentIndex + 1
+    var postTwoIndex = currentIndex + 2
+    // console.log(postOneIndex, postTwoIndex, currentIndex, "indices")
+  } else if (currentIndex === (posts.length - 1)) {
+    var postOneIndex = currentIndex - 1
+    var postTwoIndex = currentIndex - 2
+    // console.log(postOneIndex, postTwoIndex, currentIndex, "indices")
+  } else if (currentIndex > 0 && currentIndex < (posts.length - 1) && (posts.length > 2)) {
+    var postOneIndex = currentIndex - 1
+    var postTwoIndex = currentIndex + 1
+    // console.log(postOneIndex, postTwoIndex, currentIndex, "indices")
+  }
   
+  const postOne = posts[postOneIndex]
+  const postTwo = posts[postTwoIndex]
+
+  const relatedPosts = [postOne, postTwo]
+
+  // console.log(postOne, postTwo, "related posts")
+  // console.log(relatedPosts, "related posts")
 
   const {title, author_name, author_image, body, mainImage, author_title, publishedAt, slug, _id} = singlePost[0]
   
@@ -92,7 +120,7 @@ function Post({posts, post_slug}) {
 
   return (
     <div>
-      <PostTemplate title={title} author_image={author_image} author_name={author_name} createdAt={publishedAt} mainImage={mainImage} body={body} author_title={author_title} publishedDate={publishedDate} publishedYear={publishedYear} publishedMonth={publishedMonth} />
+      <PostTemplate relatedPosts={relatedPosts} posts={posts} title={title} author_image={author_image} author_name={author_name} createdAt={publishedAt} mainImage={mainImage} body={body} author_title={author_title} publishedDate={publishedDate} publishedYear={publishedYear} publishedMonth={publishedMonth} />
     </div>
   )
 }

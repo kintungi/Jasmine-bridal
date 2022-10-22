@@ -1,17 +1,17 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { urlFor } from '../lib/client'
 
-function CardNewsMedium() {
+function CardNewsMedium({title, mainImage, author_name, publishedDate, publishedMonth, publishedYear}) {
   return (
     <div>
-      <Link href="/news-and-updates/posts"><a className='news-hero-grid'>
-          <Image src={"/news-updates-one.png"} width={1316} height={740}  />
+    
+          <Image src={urlFor(mainImage)} width={1316} height={740} alt={""} />
           <article className='max-w-[782px]'>
-            <small>Jon Lavender - August 18, 2022</small>
-            <h4 className='font-messina font-bold'>Best 5 venues for your next wedding ceremony</h4>
+            <small><span>{author_name}</span> - <span>{publishedMonth}</span> <span>{publishedDate},</span> <span>{publishedYear}</span></small>
+            <h4 className='font-messina font-bold'>{title}</h4>
           </article>
-        </a></Link>
     </div>
   )
 }
