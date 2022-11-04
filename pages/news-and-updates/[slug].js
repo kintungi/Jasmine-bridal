@@ -14,7 +14,7 @@ function Post({posts, post_slug}) {
 
   const currentIndex = posts.indexOf(singlePost[0])
   // const currentIndex = 0
-  console.log(posts.indexOf(singlePost[0]), "index of post")
+  // console.log(posts.indexOf(singlePost[0]), "index of post")
 
 
   //Figuring out the index numbers for related post section

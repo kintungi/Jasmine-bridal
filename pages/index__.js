@@ -4,25 +4,18 @@ import heroImage from "../assets/images/hero-image.png"
 import NavBar from '../components/NavBar'
 import circularOne from "../assets/images/circular-one.png"
 import circularTwo from "../assets/images/circular-two.png"
-// import CardHolding from "../assets/images/card-holding.png"
+import CardHolding from "../assets/images/card-holding.png"
+import BlockCard from '../components/blockCard'
 import CardNews from '../components/CardNews'
 import newsOne from "../assets/images/news-one.png"
 import newsTwo from "../assets/images/news-two.png"
 import newsThree from "../assets/images/news-three.png"
 import Form from '../components/Form'
 import LinkText from '../components/LinkText'
-import { urlFor } from '../lib/client'
-import Link from 'next/link'
-import { client } from '../lib/client'
 import LinkTextWhite from '../components/LinkTextWhite'
 // import styles from '../styles/Home.module.css'
 
-export default function Home({projects, posts}) {
-  console.log(projects)
-  const portfolio = projects.slice(0,4);
-  const latestPosts = posts.slice(0, 3)
-  // const portfolio = ["francis", "pheby", "martin", "watson", "brown"].slice(0,4)
-  // console.log(portfolio, "sliced array")
+export default function Home() {
 
   const guardian = <svg width="148" height="40" viewBox="0 0 148 40" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g clip-path="url(#clip0_318_25909)">
@@ -88,87 +81,78 @@ export default function Home({projects, posts}) {
   
 
   return (
-    <div className='mt-96 overflow-hidden'>
+    <div className='mt-96'>
     <section className='flex flex-col justify-center width-full h-[calc(100vh-6rem)] hero bg-cover bg-center bg-[url("../assets/images/hero-image.png")] bg-no-repeat'>
       <div className='title max-w-[760px] ml-[8%]'>
       <h1 className='text-white mb-32'>Unrivaled and Unforgettable wedding Experience.</h1>
-      <button className='uppercase font-medium text-12 lg:text-16 text-white py-12 px-36 border-2 rounded-full border-white'>Learn more</button>
+      <button className='uppercase font-medium text-white py-12 px-36 border-2 rounded-full border-white'>Learn more</button>
     </div>
     </section>
     <section className="brands bg-woody flex flex-row justify-center h-[240px] items-center flex-wrap">
     <div className="guardian mr-72">{guardian}</div>
     <div className="variety mr-72">{variety}</div>
-    <div className="vogue mr-72 w-[2.3px]">{vogue}</div>
+    <div className="vogue mr-72">{vogue}</div>
     <div className="rollingStone">{rollingStone}</div>
     <section className="brands"></section>
     </section>
+    <main className='py-128 grid grid-flow-row gap-192 text-defaultText'>
+      <section className="features flex flex-col items-center">
+        <h2 className='max-w-[590px] text-center mb-64'>Offering you the best services</h2>
+        <div className="cards flex flex-row justify-center flex-wrap items-stretch">
 
-    <main className='w-screen px-0 py-128 grid grid-flow-row justify-items-center gap-128 lg:gap-192 text-defaultText'>
-      <section className="flex flex-col items-center overflow-x-hidden">
-        <h2 className='h2-sm mb-48'>Offering you the best services</h2>
-
-        <div className="feature-cards flex flex-row w-screen overflow-x-scroll">
-
-          <div className="feature-card">
-            <div className="feature-card-icon">{dblArrows}</div>
-            <h4 className='feature-card-h4 h5-sm'>End to end services</h4>
-            <p className="feature-card-body">Jasmine bridal offers all services related to wedding, from event planning to logistics and photography. You can relax and rest assured everything will be taken care of.</p>
+          <div className="card feature-card mr-48">
+            <div className="icon">{dblArrows}</div>
+            <h4>End to end services</h4>
+            <p className="text-body">Jasmine bridal offers all services related to wedding, from event planning to logistics and photography. You can relax and rest assured everything will be taken care of.</p>
           </div>
-          <div className="feature-card">
-            <div className="feature-card-icon">{stars}</div>
-            <h4 className='feature-card-h4 h5-sm'>Best wedding experience</h4>
-            <p className="feature-card-body">We make sure that you get the best experience on your wedding we work with a professional team of people experienced in the wedding industry for over 10 years.</p>
+          <div className="card feature-card mr-48">
+            <div className="icon">{stars}</div>
+            <h4>Best wedding experience</h4>
+            <p className="text-body">We make sure that you get the best experience on your wedding we work with a professional team of people experienced in the wedding industry for over 10 years.</p>
           </div>
-          <div className="feature-card mr-24">
-            <div className="feature-card-icon">{cash}</div>
-            <h4 className='feature-card-h4 h5-sm'>Affordable prices</h4>
-            <p className="feature-card-body">Our prices are friendly and affordable, our priority is to make sure you get the best wediing experience at the best possible price there is.</p>
+          <div className="card feature-card mr-0">
+            <div className="icon">{cash}</div>
+            <h4>Affordable prices</h4>
+            <p className="text-body">Our prices are friendly and affordable, our priority is to make sure you get the best wediing experience at the best possible price there is.</p>
           </div>
         </div>
       </section>
 
-      <section className="circular-cards flex flex-col items-center ">
-        <h2 className="h2-sm mb-48">Offering you the best experience</h2>
-
-        <div className="circular-cards-group mb-128 flex flex-col items-center">
-
-          <div className='circular-cards-group-1 flex flex-col-reverse items-center mb-96'>
-            <article className=''>
-              <h3 className='h5-sm max-w-[251.76px] mb-16'>Unparralled wedding experience</h3>
-              <p className='circular-body'>Our events are unique due to how we organise and conduct them, they are no where near typical. Every event comes with a huge upgrade from the last one.</p>
+      <section className="value-proposition flex flex-col items-center">
+        <h2 className='max-w-[590px] text-center mb-64'>Offering you the best experience</h2>
+        <div className="cards flex flex-col items-center">
+          <div className='flex flex-row items-center mb-256 mt-64 flex-wrap-reverse'>
+            <article className='max-w-[378.92px] mr-64 mt-32'>
+              <h3 className='mb-16'>Unparralled wedding experience</h3>
+              <p>Our events are unique due to how we organise and conduct them, they are no where near typical. Every event comes with a huge upgrade from the last one.</p>
             </article>
-            <div className='max-w-[320px] mb-32'>
             <Image src={circularOne} alt="picture of the bride and bridegroom" width="347.34" height="736"/>
-            </div>
           </div>
 
-          <div className='circular-cards-group-2 flex flex-col-reverse items-center'>
-            <article className=''>
-              <h3 className='mb-16 h5-sm max-w-[251.76px]'>Unparralled wedding experience</h3>
-              <p className='circular-body'>Our events are unique due to how we organise and conduct them, they are no where near typical. Every event comes with a huge upgrade from the last one.</p>
+          <div className='flex flex-row-reverse items-center mt-64 flex-wrap-reverse'>
+            <article className='max-w-[378.92px] ml-64 mt-32'>
+              <h3 className='mb-16'>Unparralled wedding experience</h3>
+              <p>Our events are unique due to how we organise and conduct them, they are no where near typical. Every event comes with a huge upgrade from the last one.</p>
             </article>
-            <div className='max-w-[320px] mb-32'>
             <Image src={circularTwo} alt="picture of the bride and bridegroom" width="347.34" height="736"/>
-            </div>
-            
           </div>
         </div>
 
-        <section className="counter">
-        <div className='counter-group  text-defaultText max-w-[184px]'>
-          <h1 className='counter-header' >50+</h1>
+        <section className="counter grid gap-96 grid-flow-col mt-192">
+        <div className='text-defaultText max-w-[184px]'>
+          <h1 >50+</h1>
           <p>We have more than 50 branches located at your nearest city.</p>
         </div>
-        <div className='counter-group text-defaultText max-w-[184px]'>
-          <h1 className='counter-header'>20+</h1>
+        <div className='text-defaultText max-w-[184px]'>
+          <h1 >20+</h1>
           <p>20 plus members of staff at your disposal to make sure your next event turns out successful</p>
         </div>
-        <div className='counter-group text-defaultText max-w-[184px]'>
-          <h1 className='counter-header'>10+</h1>
+        <div className='text-defaultText max-w-[184px]'>
+          <h1 >10+</h1>
           <p>Over 10 years of experience in event planning and organising</p>
         </div>
-        <div className='counter-group text-defaultText max-w-[184px]'>
-          <h1 className='counter-header'>30+</h1>
+        <div className='text-defaultText max-w-[184px]'>
+          <h1 >30+</h1>
           <p>More than 30 wedding ceremonies planned and carried out successfully.</p>
         </div>
       </section>
@@ -177,18 +161,16 @@ export default function Home({projects, posts}) {
 
       
 
-      <section className="rectangular-cards flex flex-col items-center">
+      <section className="block-cards grid place-items-center grid-flow-row">
 
-      <div className='card-one w-[100%] px-24 mb-32'>
+      <div className='card-one h-[724px] flex flex-row'>
       
-      <div className='image'>
-        <Image layout="responsive" src={"/card-holding.png"} alt="" height={724} width={829.42} />
-      </div>
+      <div className='image h-[100%] w-[50vw] bg-[url("../assets/images/card-holding.png")] bg-center bg-no-repeat bg-cover'></div>
       
-      <div className='px-24 py-24 bg-woody text-white lg:px-64'>
+      <div className='w-[50vw] h-[100%] bg-woody text-white grid place-items-center px-64'>
       <article className='max-w-[342px]'>
       <div>
-        <h3 className='mb-16 h5-sm'>Exquisite and top notch wedding services</h3>
+        <h3 className='mb-16'>Exquisite and top notch wedding services</h3>
         <p className='mb-24'>We offer all services pertaining to wedding, which means our client will not have to bother to do anything or hire other third party companies to offer help. Our services are also cheap and affordable offered at different tiers basing on the budget of our clients.</p>
       </div>
       <LinkTextWhite text="See services" />
@@ -196,16 +178,14 @@ export default function Home({projects, posts}) {
     </div>
     </div>
 
-      <div className='card-two w-[100%] px-24'>
+      <div className='card-two h-[724px] flex flex-row-reverse'>
       
-      <div className='image'>
-        <Image layout="responsive" src={"/card-hands.png"} alt="" height={724} width={829.42} />
-      </div>
+      <div className='image h-[100%] w-[50vw] bg-[url("../assets/images/card-hands.png")] bg-center bg-no-repeat bg-cover'></div>
       
-      <div className='lg:w-[50vw] py-24 bg-midnight text-white grid place-items-center px-24 lg:px-64'>
+      <div className='w-[50vw] h-[100%] bg-midnight text-white grid place-items-center px-64'>
       <article className='max-w-[342px]'>
       <div>
-        <h3 className='mb-16 h5-sm'>Experienced team of organisers</h3>
+        <h3 className='mb-16'>Experienced team of organisers</h3>
         <p className='mb-24'>Our team of organisers has more than 10 years of industry experience in wedding planning with over 50 ceremonies during the time. Our team is ready to listen to your idea and make it a reality.</p>
       </div>
       <LinkTextWhite text="See team" />
@@ -213,106 +193,52 @@ export default function Home({projects, posts}) {
     </div>
     </div>
 
-    <p className='quote max-w-[320px] lg:max-w-[630.74px] text-center lg:subtitle mt-96 lg:mt-128 mx-24'>“I wish I had a wedding every next year just so Jasmine bridal could bring the feeling back. It was really spectacular. I will never forget”</p>
+    <p className='quote max-w-[630.74px] text-center subtitle mt-128'>“I wish I had a wedding every next year just so Jasmine bridal could bring the feeling back. It was really spectacular. I will never forget”</p>
 
       </section>
 
-      <section className='work flex flex-col items-center px-24'>
-      <h2 className='h2-sm mb-48'>Explore recent work</h2>
+      <section className='mx-auto flex flex-col items-center'>
+      <h2 className='max-w-[590px] text-center mb-64'>Explore recent work</h2>
 
-      <div className="collage hidden grid  grid-cols-[repeat(2,_1fr)] grid-rows-[max-content]">
+      <div className="image-grid grid grid-flow-col gap-24 mx-72">
         <div className="one grid max-h-[1144px] grid-flow-row gap-24 grid-cols-[minmax(50px,400px)]">
           <div className='top bg-[url("../assets/images/grid-one.png")] w-[100%] h-[100%] bg-center bg-cover'></div>
-          <div className='top hidden bg-[url("../assets/images/grid-one.png")] w-[100%] h-[100%] bg-center bg-cover'></div>
+          <div className='top bg-[url("../assets/images/grid-one.png")] w-[100%] h-[100%] bg-center bg-cover'></div>
         </div>
         
-        {/* <div className="">
-          <div className='top bg-[url("../assets/images/grid-two.png")]  '></div>
-          <div className='top hidden hidbg-[url("../assets/images/grid-two.png")] w-[100px] h-[100px] '></div>
-          <div className='top hidden bg-[url("../assets/images/grid-two.png")] '></div>
-        </div> */}
-
-        <div className="">
-          <div className='top hidden bg-[url("../assets/images/grid-three.png")] w-[100px] h-[100px] bg-center bg-cover'></div>
-          <div className='top hidden bg-[url("../assets/images/grid-three.png")] w-[100%] h-[560px] bg-center bg-cover'></div>
-        </div>
-        
-        <div className="">
-          <div className='top hidden bg-[url("../assets/images/grid-three.png")] w-[100%] h-[100%] bg-center bg-cover'></div>
-          <div className='top hidden bg-[url("../assets/images/grid-three.png")] w-[100%] h-[560px] bg-center bg-cover'></div>
+        <div className="two grid grid-flow-row gap-24 max-h-[1144px] grid-rows-[1fr_560px_1fr] grid-cols-[minmax(50px,400px)]">
+          <div className='top bg-[url("../assets/images/grid-two.png")] w-[100%]  bg-center bg-cover'></div>
+          <div className='top bg-[url("../assets/images/grid-two.png")] w-[100%]  bg-center bg-cover'></div>
+          <div className='top bg-[url("../assets/images/grid-two.png")] w-[100%]  bg-center bg-cover'></div>
         </div>
 
-        <div className="">
-          <div className='top hidden bg-[url("../assets/images/grid-three.png")] w-[100px] h-[100px] bg-center bg-cover'></div>
-          <div className='top hidden bg-[url("../assets/images/grid-three.png")] w-[100%] h-[560px] bg-center bg-cover'></div>
+        <div className="three grid grid-flow-row max-h-[1144px] grid-rows-[1fr_1fr] gap-24 grid-cols-[minmax(50px,400px)]">
+          <div className='top bg-[url("../assets/images/grid-three.png")] w-[100%] h-[100%] bg-center bg-cover'></div>
+          <div className='top bg-[url("../assets/images/grid-three.png")] w-[100%] h-[560px] bg-center bg-cover'></div>
         </div>
       </div>
 
-      <div className="collage mb-32 grid  grid-cols-[repeat(2,_1fr)] gap-[20px] grid-rows-[max-content]">
-        
-          {
-            portfolio && portfolio.map(project => {
-              // const [project_cover, _id, project_name] = project 
-              return <Link key={project._id} href={'/portfolio/' + project._id}><a><Image  src={urlFor(project.project_cover)} height={720} width={514} alt={""} /></a></Link>
-            })
-          }
-      </div>
-
-      <button className='uppercase font-medium text-12 lg:text-16 text-defaultText py-12 px-36 border-2 rounded-full border-defaultText'>See Portfolio</button>
+      <button className='uppercase font-medium text-woody py-12 px-36 border-2 rounded-full border-woody mt-72'>see porfolio</button>
       </section>
 
-      <section className="flex flex-col items-center">
-        <h2 className='h2-sm text-center mb-48'>Latest news and stories</h2>
+      <section className="stories flex flex-col items-center">
+        <h2 className='max-w-[590px] text-center mb-64'>Latest news and stories</h2>
         <div>
-        <section className="grid gap-y-[48px] grid-cols-1 grid-rows-[max-content] mb-48">
-
-          {latestPosts && latestPosts.map(post => {
-            return <Link key={post._id} href={"/news-and-updates/" + post.slug}><a><CardNews src={urlFor(post.mainImage)} width={1316} height={740} alt={""} heading={post.title} /></a></Link>
-          })}
+        <section className="posts grid grid-flow-col grid-cols-[max-content_max-content_max-content] gap-[48px_24px] mb-64">
+          <CardNews src={newsOne} alt="Image of a bride" heading=" 5 Favourite Alternative Unity Ceremony Ideas"/>
+          <CardNews src={newsTwo} alt="Image of a bride" heading=" Writing Your Own Wedding Vows: Everything You Need to Think About"/>
+          <CardNews src={newsThree} alt="Image of a bride" heading=" Renewing Your Wedding Vows: A Definitive Guide"/>
         </section>
         <LinkText text="See  All  news and articles" />
         </div>
       </section>
 
-      <section className="flex flex-col items-center px-24">
-        <h2 className='h2-sm text-center mb-48'>Amazing things happen when you say hi</h2>
+      <section className="form flex flex-col items-center">
+        <h2 className='max-w-[590px] text-center mb-64'>Amazing things happen when you say hi</h2>
         <Form />
       </section>
 
     </main>
     </div>
   )
-}
-
-export async function getStaticProps({params}) {
-  const query = "*[_type == 'project']"; //creating a query on a document with a name of project
-
-  const projects = await client.fetch(query) //fetching projects from sanity using the sanity client
-
-  // const project_id = params.project_id //geting the project id from  the url parameter
-
-  const postQuery = `*[_type == 'post']{
-    _id, 
-    body, 
-    mainImage,
-    'slug': slug.current,
-    publishedAt, 
-    title,
-    'author_name': author -> name,
-    'author_image': author -> image,
-    'author_title': author -> title
-  }
-  `
-
-  const posts = await client.fetch(postQuery)
-
-
-  return {
-    props: {
-      projects,
-      posts
-      // project_id
-    }
-  }
-
 }

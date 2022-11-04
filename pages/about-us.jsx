@@ -7,9 +7,9 @@ import FormSection from '../components/FormSection'
 function aboutUs() {
   return (
     <Pages title="About us">
-      <div className='grid grid-flow-row justify-center justify-items-center'>
+      <div className='px-24 grid grid-flow-row justify-center justify-items-center'>
       <HeroImage image={heroImg} />
-      <section className="articles max-w-[782px] flex flex-col mt-96 items-center">
+      <section className="articles  max-w-[782px] flex flex-col mt-96 items-center">
         <article className='who-we-are flex flex-col items-center'>
           <h4>Who we are</h4>
           <p className='mt-32 mb-[132px]'>Founded in 2013 by Jasmine Lida after 
@@ -44,8 +44,8 @@ function aboutUs() {
       </section>
       </div>
       <section className="images grid grid-flow-col gap-[20vw] grid-cols-[1fr_1fr]">
-        <div className="image w-[100%] mr-[auto] h-[980px] bg-cover bg-center bg-[url('../assets/images/about-one.png')]"></div>
-        <div className="image w-[100%] ml-[auto] mt-[512px] h-[980px] bg-cover bg-center bg-[url('../assets/images/about-two.png')]"></div>
+        <div className="image w-[100%] mr-[auto] h-[372px] lg:h-[980px] bg-cover bg-center bg-[url('../assets/images/about-one.png')]"></div>
+        <div className="image w-[100%] ml-[auto] mt-[512px] h-[372px] lg:h-[980px] bg-cover bg-center bg-[url('../assets/images/about-two.png')]"></div>
       </section>
       <FormSection />
     </Pages>

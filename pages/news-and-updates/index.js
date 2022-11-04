@@ -6,6 +6,7 @@ import FormSection from '../../components/FormSection'
 import Pages from '../../components/Pages'
 import { client } from '../../lib/client'
 import { urlFor } from '../../lib/client'
+import { gsap } from "gsap"
 
 function newsAndUpdates({posts}) {
 
@@ -16,9 +17,9 @@ function newsAndUpdates({posts}) {
   return (
     <Pages title="News & updates">
       <div className="news-grid">
-      <section className="news-hero">
+      {/* <section className="news-hero hidden">
         <Link href="#"><a >
-         <div className='news-hero-grid'>
+         <div className='news-hero-grid '>
          <Image src={"/news-updates-one.png"} width={1316} height={740} alt=""  />
           <article className='max-w-[782px] mt-[20px]'>
             <p className='mb-8'>Jon Lavender - August 18, 2022</p>
@@ -26,8 +27,8 @@ function newsAndUpdates({posts}) {
           </article>
          </div>
         </a></Link>
-      </section>
-      <section className="other-news">
+      </section> */}
+      <section className="all-news mb-192">
         { posts && posts.map(post => {
 
           // console.log(post.slug)
